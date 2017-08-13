@@ -18,3 +18,8 @@ Route::get('/', function () {
 Route::get('hello/', function () {
     return view('hello');
 });
+
+Route::get('users/', function () {
+    $users = DB::table('users')->get();
+    return view('users.index', compact('users'));
+});
